@@ -1,13 +1,9 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
 {% block TITLE %} WeiHu's Blog {% endblock %}
 
 {% block BODY %}
-{% for blog in blogs %}
-<h1>{{ blog.title }}</h1>
+<h1>{{ blog.title }} </h1>
 <p>{{ blog.content|safe }}</p>
 <p>{{ blog.timestamp|date:"Y-m-d H:m:s" }}</p>
-{% empty %}
-No blog in here.
-{% endfor %}
 {% endblock %}

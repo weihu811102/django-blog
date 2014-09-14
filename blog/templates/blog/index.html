@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block TITLE %} WeiHu's Blog {% endblock %}
+
+{% block BODY %}
+{% for blog in blogs %}
+<a href="{% url "blog:detail" blog.id %}"> <h3>{{ blog.title }}</h3> </a>
+{% empty %}
+No blog in here.
+{% endfor %}
+<!--{% url "blog:index" %}-->
+{% endblock %}
